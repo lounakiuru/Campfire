@@ -11,7 +11,7 @@ define c = Character("Caller")
 define bbg = Character("Random person")
 define g = Character("Another random person")
 define sw = Character("Slow walker")
-
+define sbbg = Character("A shady, bad guy")
 
 # The game starts here.
 
@@ -244,7 +244,8 @@ label youghurt:
             bbg "Dark secrets."
             bbg "And had they ever met daylight..."
             bbg "Would expose the truth!"
-            bbg "Which is that the "
+            bbg "Which is that the train company"
+            bbg "Runs merely on coffee and donuts!"
             u "Wow!"
             u "That was... oddly specific"
             bbg "But remember that it's just hypothetical!"
@@ -363,6 +364,57 @@ label slowWalker:
     sw "And needed money to buy new pokemopn cards to my collection."
     sw "Then I got a job offer."
 
+    sbbg "Heyyyy!"
+    sw "What do you want?"
+    sbbg "What do YOU want?"
+    sw "A job?"
+    sbbg "Well don't worry, be happy now!"
+    sbbg "I have a job for you!"
+    sw "Yay! Now I can buy Charichard!"
+    sbbg "What?"
+    sw "Forget."
+
+    sw "You see? Not up to me!"
+    u "Not at all..."
+    sw "And then he gave me the instructions"
+    sw "I was shocked!"
+    sw "But the stakes were too high..."
+    u "So what did you do?"
+    sw "I infiltrated myself into VR"
+    sw "And then I got cancelled to their donut subscription!"
+    u "Because then..."
+    sw "They would have no more donuts!"
+    u "But why?"
+    sw "Haven't you heard?"
+    u "Heard what?"
+    sw "That the boss is trying to-"
+    sw "Oh wait"
+    sw "That's probably classified"
+    u "Who is your boss? And why do you walk so slowly?"
+    sw "I can't tell you! And I stubbed my toe when I first walked in here!"
+    u "What?"
+    sw "If I had actually gotten the job, they would have briefed me about it!"
+    sw "Wait..."
+    sw "Why didn't I just..?"
+    u "Whatever! Tell me who your boss is!"
+    sw "I can't! I've said too much!"
+    "And then he sprints off, apparently forgetting about the pain in his toe."
+    "This entire mess just got way deeper"
+    "And going on might change your life."
+    menu:
+        "Do you want to continue?"
+
+        "Yes":
+            jump office2
+
+        "I've had enough of this!":
+            "You decide that this scandal is too much"
+            "Time to forget about it and walk home feeling relieved that it's over."
+            jump end
+
     
+label office2:
+    "You walk back into the office"
+    "Time to find out who's behind this!"
 
     return
