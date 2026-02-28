@@ -4,9 +4,26 @@
 # name of the character.
 
 define u = Character("You")
+define p = Character("Phone")
+define c = Character("Caller")
 
 
 # The game starts here.
+
+label notAnswer:
+    scene bg room
+
+    "You just let the phone ring."
+    "It rings."
+    "And it rings."
+    "And it rings."
+    "And finally..."
+    "It stops ringing"
+    "You find another job,"
+    "And die happily of old age"
+    "The end"
+
+    return
 
 label start:
 
@@ -24,9 +41,30 @@ label start:
 
     # These display lines of dialogue.
 
-    u "You've created a new Ren'Py game."
+    u "Ugh! Why are there literally NO CASES???"
+    u "I'm going to be jobless!"
+    u "People don't make crimes like they used to!"
+    u "What happened to society?"
+    u "What happened to the criminals?"
+    u "Why can't someone... like... commit a murder or something?"
+    u "I'm sooooo bor..."
+    p "RING RING RING"
+    u "FINALLY!!"
+    
+    menu:
+        "Will you answer?"
 
-    u "Once you add a story, pictures, and music, you can release it to the world!"
+        "Answer phone":
+            "You answer the phone"
+
+        "Just let watch it ring until they give up":
+            jump notAnswer
+
+    c "I... I... I..."
+
+
+
+    
 
     # This ends the game.
 
