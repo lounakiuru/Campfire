@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("tosihienopeli")
+define config.name = _("The Great VR Mystery")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "tosihienopeli"
+define build.name = "The Great VR Mystery"
 
 
 ## Sounds and music ############################################################
@@ -46,9 +46,9 @@ define build.name = "tosihienopeli"
 ## to the player by default. Setting one of these to False will hide the
 ## appropriate mixer.
 
-define config.has_sound = True
+define config.has_sound = False
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## To allow the user to play a test sound on the sound or voice channel,
@@ -143,7 +143,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "tosihienopeli-1772277712"
+define config.save_directory = "theGreatVrMystery-1772277712"
 
 
 ## Icon ########################################################################

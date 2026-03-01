@@ -1,11 +1,4 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-#color="#4c64ce"
-
-define u = Character("You", image = "u")
+﻿define u = Character("You", image = "u")
 define p = Character("Phone")
 define c = Character("Caller", image = "c")
 define bbg = Character("Timothy", image = "bbg")
@@ -13,9 +6,6 @@ define g = Character("Catboy", image = "g")
 define sw = Character("Slow walker", image = "sw")
 define sbbg = Character("A shady, bad guy", image = "bbg")
 define cbbg = Character("Child Timothy", image = "cbbg")
-
-
-# The game starts here.
 
 label end:
     scene bg bedroom
@@ -31,19 +21,9 @@ label start:
 
     play music mysterious
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
     scene bg bedroom
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
     show u speak
-
-    # These display lines of dialogue.
 
     u "Ugh! Why are there literally NO CASES???"
     u "I'm going to be jobless!"
@@ -71,9 +51,6 @@ label start:
             "It stops ringing"
             jump end
 
-        "I'm testing let me to sw":
-            jump slowWalker
-
     c "I... I... I..."
     u @ speak "Go on! What happened? A robbery? Arson? Or perhaps even... murder?"
     c "No, nothing like that. It's worse. I... I can't explain it on the phone! You'll have to see for yourself!"
@@ -86,7 +63,7 @@ label lobby:
     show u basic
 
     "You arrive at an office building."
-    "You might recognize the logo or not."
+    "You might recognize the Finnish railway company (VR) logo."
     u "Hmm..."
     u "They told me to come to the coffee room."
 
@@ -208,7 +185,7 @@ label yogurt:
                             bbg @ mad "I'm not!"
                             u @ speak "Ummm yes you are."
                             bbg @ mad "No"
-                            u @ speak "Yes"
+                            u @ eyeroll "Yes"
                             bbg @ mad "No"
                             jump debate
 
@@ -274,15 +251,15 @@ label yogurt:
             u @ speak "I have 10 000 hours in Among Us!"
             u @ speak "Now answer the question!"
             bbg @ mad "What do you want me to say?"
-            bbg @ mad "That I did it to blind anyone in the room so that I could sneak into the Super Secret Secret Room (SSSR)?"
+            bbg @ mad "That I did it to blind anyone in the room so that I could sneak into the Ultra Secret Secret Room (USSR)?"
             u @ speak "Well... did you?"
             bbg @ speak "Well... maybe..."
             u @ speak "Hmm okay..."
-            u @ speak "In this completely hypothetical situation that you DID sneak into the SSSR..."
+            u @ speak "In this completely hypothetical situation that you DID sneak into the USSR..."
             u @ speak "WHY?"
             show bbg speak
             bbg "Well, since this is completely hypothetical and has nothing to do with what actually happened"
-            bbg "I did... would have done it... because in the SSSR... there are secrets."
+            bbg "I did... would have done it... because in the USSR... there are secrets."
             bbg "Dark secrets."
             bbg "And had they ever met daylight..."
             bbg "Would expose the truth!"
@@ -292,7 +269,7 @@ label yogurt:
             u @ speak "Wow!"
             u @ speak "That was... oddly specific"
             bbg @ speak "But remember that it's just hypothetical!"
-            u @ speak "Yeah right..."
+            u @ eyeroll "Yeah right..."
             u @ speak "Look I don't-"
             g "AAAAAH!!!"
             u @ speak "What's that?"
@@ -309,9 +286,9 @@ label yogurt:
 label debate:
     show bbg mad
     bbg "Nope"
-    u @ speak "Yup"
+    u @ eyeroll "Yup"
     bbg "Nuh uh"
-    u @ speak "Yuh uh"
+    u @ eyeroll "Yuh uh"
     bbg "No"
     menu:
         "Yes":
@@ -334,10 +311,10 @@ label gum:
     u @ speak "You... what?"
     g @ scream "AAH! AAH! AAH! Get it out!"
     u @ speak "Hey! Calm down! What happened?"
-    g @ scream "Someone... Someone commited..."
+    g @ speak "Someone... Someone commited..."
     g @ scream "A CRIME!"
     u @ speak "Another crime?"
-    show g scream
+    show g speak
     g "What do you mean another? Anyways..."
     g "I was just sitting at my desk..."
     g "Doing work as usual"
@@ -346,26 +323,26 @@ label gum:
     g "And the day before that"
     g "And the d-"
     show g basic
-    u @ speak "YES! I get it."
-    show g scream
+    u @ eyeroll "YES! I get it."
+    show g speak
     g "Oh... Sorry... It's just this place."
     g "I swear I would quit if I just could."
     g "The only reason to stay is the coffee."
     g "And maybe the pay too."
     show g basic
     u @ speak "Sure... And the crime?"
-    g @ scream "Oh, yes! I was reaching for some papers when it happened!"
+    g @ speak "Oh, yes! I was reaching for some papers when it happened!"
     u @ speak "When what happened?"
     g @ scream "I touched it!"
     g @ scream "A chewed gum!"
     u @ speak "And that's the crime?"
-    g @ scream "Yes! You'll have to find the culprit!"
+    g @ speak "Yes! You'll have to find the culprit!"
     menu:
         "Seems random. What do you do?"
 
         "Find them":
             u @ wink "Okay."
-            g "Good luck! This office needs justice!"
+            g @ speak "Good luck! This office needs justice!"
 
         "Go home":
             "You decide that none of this matters enough."
@@ -380,20 +357,20 @@ label gum:
 
         "Interview the victim":
             u @ speak "So... have you seen anyone near your desk?"
-            g "Nope"
+            g @ speak "Nope"
             u @ speak "Right... well... do you have any enemies here?"
-            g "Nope.  I don't talk to people."
-            u @ speak "Any idea who could have done this?"
-            g "Aren't you supposed to be the detective?"
+            g  @ speak"Nope.  I don't talk to people."
+            u @ eyeroll "Any idea who could have done this?"
+            g @ speak "Aren't you supposed to be the detective?"
             menu:
                 "Give up and go home":
-                    u speak "Yeah right"
+                    u eyeroll "Yeah right"
                     u "Well... if you don't care, I'll head home"
                     u "Bye"
                     "And so you head towards the exit."
                     jump slowWalker
                 "Investigate the gum instead":
-                    u @ speak "Well if you don't want to collaborate, I'll investigate the evidence!"
+                    u @ eyeroll "Well if you don't want to collaborate, I'll investigate the evidence!"
                     "You take a look at the gum."
                     "It's sticky and still warm."
     u @ speak "Ewww! It's fresh!"
@@ -402,21 +379,21 @@ label gum:
     u "Wait..."
     u "What do you have there?"
     show u basic
-    g "Gum"
+    g @ speak "Gum"
     u @ speak "What flavour?"
-    g "Strawberry cheesecake"
+    g @ speak "Strawberry cheesecake"
     u @ speak "And... When did you last eat it?"
-    g "Like 10 minutes ago"
+    g @ speak "Like 10 minutes ago"
     u "..."
-    u @ speak "...Seriously?"
-    g "What?"
+    u @ eyeroll "...Seriously?"
+    g @ speak "What?"
     u @ speak "Where did you put it?"
-    g "Idk.. probably under my... Oh"
-    u @ speak "How do you even forget that?"
-    g "It was an accident!"
+    g @ speak "Idk.. probably under my... Oh"
+    u @ eyeroll "How do you even forget that?"
+    g @ speak "It was an accident!"
     menu:
         "Well... I guess teenagers are... teenagers":
-            g "I'm not a teenager! I'm 42!"
+            g @ speak "I'm not a teenager! I'm 42!"
             u @ speak "Yeah right"
             "You decide you've had enough"
             "Time to finally go home"
@@ -428,16 +405,16 @@ label gum:
             jump slowWalker
 
         "That's disgusting! Why would you stick it under the table?":
-            g "Because it's... nothing"
-            g "I just... didn't pay attention"
-            g "I was watching cat videos"
+            g @ speak "Because it's... nothing"
+            g @ speak "I just... didn't pay attention"
+            g @ speak "I was watching cat videos"
             menu:
                 "Honestly I'm not surprised.":
                     "You decide you've had enough"
                     "Time to finally go home"
                     jump slowWalker
                 "Are you sure?":
-                    g "What else would I be doing?"
+                    g @ speak "What else would I be doing?"
                     menu:
                         "I smell crime!":
                             u @ speak "You... are lying!"
@@ -445,15 +422,15 @@ label gum:
                             "You decide you've had enough"
                             "Time to finally go home"
                             jump slowWalker
-    g "Ugh fine!"
-    g "I was just lying all along"
+    g @ speak "Ugh fine!"
+    g @ speak "I was just lying all along"
     u @ speak "So... what's the deal then?"
-    g "The deal? I honestly don't remember. It included money."
+    g @ speak "The deal? I honestly don't remember. It included money."
     u @ speak "Who did you make the deal with?"
-    g "I don't remember! I was scrolling TokTik!"
+    g @ speak "I don't remember! I was scrolling TokTik!"
     u @ speak "And... Your job was..."
     g "Uhhh something to do with gum but can you fuckle off now?"
-    u @ speak "After this converstation... I'd love to!"
+    u @ eyeroll "After this converstation... I'd love to!"
     jump slowWalker
 
 
@@ -502,7 +479,7 @@ label slowWalker:
             sw @ speak "I'm a bad liar!"
             u @ speak "No you're not! I'm just very good at detecting lies."
             sw @ happy "Aww thanks! How did you get so good at it?"
-            u @ speak "It's kind of my job. So... Why are you walking so slow?"
+            u @ wink "It's kind of my job. So... Why are you walking so slow?"
     
     sw @ speak "Well it all started a couple of weeks ago..."
 
@@ -555,6 +532,7 @@ label slowWalker:
     sw @ speak "Why didn't I just..?"
     u @ mad "Whatever! Tell me who your boss is!"
     sw @ speak "I can't! I've said too much!"
+    hide sw
     "And then he sprints off, apparently forgetting about the pain in his toe."
     "This entire mess just got way deeper"
     "And going on might change your life forever."
@@ -601,7 +579,7 @@ label gumSuspect:
     g "Yeah didn't you already lecture me?"
     u @ speak "Oh right... but another crime!"
     g "You're SO off! The real boss just came here to get what he needed. And now... Nothing will stop him!"
-    u @ speak "W-wh-what??"
+    u @ mad "W-wh-what??"
     g "Game over, loser!"
     "You run out crying. This is too big of a hit for your pride."
     "You decide to just go home and cuddle with your blahaj"
@@ -616,9 +594,8 @@ label callerSuspect:
     "But is it right?"
     "Only one way to find out..."
 
-    scene bg coffeeroom
+    scene bg office4
     show u basic
-    show bbg sad
 
     "You run to the coffee room as fast as you can"
     "Ready to make the accusation."
@@ -643,6 +620,9 @@ label callerSuspect:
         "How do you belive him?"
 
         "Yeah, that makes sense I guess":
+            show u basic
+            show bbg sad
+            scene bg coffeeroom
             bbg @ speak "Hey what are you still doing here?"
             bbg @ speak "Shouldn't you head home now?"
             u @ speak "True. Bye!"
@@ -657,6 +637,9 @@ label callerSuspect:
 
 label yell:
 
+    scene bg coffeeroom
+    show u basic
+    show bbg sad
     u @ mad "I HAVE HEARD ENOUGH LIES TODAY!"
     u @ mad "WHAT ARE YOU TRYING TO DO AND WHY!?"
     bbg @ sad "Please, stop yelling at me!"
@@ -704,7 +687,7 @@ label yell:
     bbg @ mad "How dare you! I'm only 28."
     u @ speak "Riight..."
     u @ mad "So... what exactly was your plan here?"
-    bbg @ speak "Aha, yes! My devious master plan."
+    bbg @ wink "Aha, yes! My devious master plan."
     bbg @ speak "You see, from my years of research, I found that the only thing keeping VR alive was this specific coffee maker."
     bbg @ speak "So, obviously, I infiltrated myself into VR and paid a couple others to do the same."
     bbg @ speak "Then, once we were in, I began by leaving the yogurt open to distract the other employees."
@@ -721,6 +704,7 @@ label yell:
     "So, SO much praise!"
     u @ mad "MONEY?"
     scene black with fade
+    return
 
 
 
