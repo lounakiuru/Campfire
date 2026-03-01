@@ -7,11 +7,12 @@
 
 define u = Character("You", image = "u")
 define p = Character("Phone")
-define c = Character("Caller")
-define bbg = Character("Random person", image = "bbg")
-define g = Character("Another random person")
-define sw = Character("Slow walker")
+define c = Character("Caller", image = "c")
+define bbg = Character("Timothy", image = "bbg")
+define g = Character("Catboy", image = "g")
+define sw = Character("Slow walker", image = "sw")
 define sbbg = Character("A shady, bad guy", image = "bbg")
+define cbbg = Character("Child Timothy", image = "cbbg")
 
 
 # The game starts here.
@@ -19,7 +20,6 @@ define sbbg = Character("A shady, bad guy", image = "bbg")
 label end:
     scene bg bedroom
     show u wink
-
 
     "You find another job,"
     "And die happily of old age"
@@ -171,6 +171,8 @@ label yogurt:
             "You walk up to a person"
             u @ speak "Heyyy"
             bbg @ speak "Hi?"
+            u @ speak "Who are you?"
+            bbg @ speak "My name is Timothy. Why?"
             u @ speak "Look... when did you last use the coffee room?"
             bbg @ speak "Ten minutes ago"
             u @ speak "Oh cool cool..."
@@ -512,7 +514,7 @@ label slowWalker:
     sw "And needed money to buy new Pokemon cards for my collection."
     sw "Then I got a job offer."
 
-    show bbg shadywink at right
+    show bbg shadywink
 
     sbbg "Heyyyy!"
     sw @ speak "What do you want?"
@@ -577,7 +579,7 @@ label office2:
     menu:
         "Who do you suspect?"
 
-        "My instincts lead towards Joe":
+        "My instincts lead towards Timothy":
             jump final
 
         "I feel like it's the catboy":
@@ -623,7 +625,103 @@ label callerSuspect:
     "But the caller has dissapeared."
     
     scene bg coffee
-    show bbg hand
+    show bbg hand:
+        zoom 0.3
+        topleft
+
+    "Someone is trying to put gum into the coffee maker!"
+    u "HEY, YOU, SEIZE YOUR ACTIONS IN THE NAME OF THE LAW!!"
+    "The person at the coffee maker is startled and you see..."
+    "That it was Timothy!"
+    bbg "Huh, what... Wait no, I-"
+    u "You better have a damn good explanation for what you're doing"
+    u "Breaking coffee makers is extreamly illegal, you know."
+    bbg "Uhh, no you got it all wrong!"
+    bbg "I was simply putting this into the trash, you see."
+
+    menu:
+        "How do you belive him?"
+
+        "Yeah, that makes sense I guess":
+            bbg @ speak "Hey what are you still doing here?"
+            bbg @ speak "Shouldn't you head home now?"
+            u @ speak "True. Bye!"
+            bbg @ speak "Bye!"
+            "You leave the building and take a stroll in the park."
+            "Oh how nice life can be!"
+            "Then you head home"
+            jump end
+
+        "HELL NO, TELL ME THE TRUTH NOW!!":
+            jump yell
+
+label yell:
+
+    u @ mad "I HAVE HEARD ENOUGH LIES TODAY!"
+    u @ mad "WHAT ARE YOU TRYING TO DO AND WHY!?"
+    bbg @ sad "Please, stop yelling at me!"
+    bbg @ sad "My Daddy used to yell at me all the time."
+
+    menu:
+        "How do you proceed?"
+
+        "Ask him nicely":
+            u "Ok, I'm sorry."
+        "Keep yelling":
+            jump yell
+
+    u @ speak "But could you please tell me what you're trying to do."
+    bbg @ sad "Well... alright."
+    bbg @ speak "It all began when I was a little boy..."
+
+    scene bg train
+    show cbbg basic
+
+    bbg "You see, I was on my way to Kouvola"
+    bbg "They were holding a limited time sale of rare fidget spinners"
+    show spinner at topright
+    bbg "Including a super rare diamond one!"
+    hide spinner
+    cbbg @ happy "Yipee! Fidget spinners!"
+    bbg "But little did I know..."
+    bbg "The train was delayed."
+    bbg "Because of this, I missed the sale of the diamond fidget spinner."
+    bbg "I was stuck with a lesser, gold fidget spinner."
+    cbbg sad "NOO! I wanted the diamond fidget spinner!"
+    bbg "I cursed VR"
+    bbg "And from that point on I dedicated my life on taking revenge"
+    bbg "I swore that no matter how difficult the journey, I would bring down VR."
+
+    scene bg coffeeroom
+    show bbg basic
+    show u mad
+
+    u "Wait, seriously"
+    u "A fidget spinner?"
+    show u basic
+    bbg @ speak "A RARE fidget spinner!"
+    u @ mad "Aren't you like 30?"
+    bbg @ mad "How dare you! I'm only 28."
+    u @ speak "Riight..."
+    u @ mad "So... what exactly was your plan here?"
+    bbg @ speak "Aha, yes! My devious master plan."
+    bbg @ speak "You see, from my years of research, I found that the only thing keeping VR alive was this specific coffee maker."
+    bbg @ speak "So, obviously, I infiltrated myself into VR and paid a couple others to do the same."
+    bbg @ speak "Then, once we were in, I began by leaving the yogurt open to distract the other employees."
+    bbg @ speak "Simultaneously, the cat boy I hired chewed gum and stuck it to the bottom of a desk, ready for use later."
+    bbg @ speak "The job of the slow walker was to distract you while I plant the pre chewed gum into the coffee maker."
+    bbg @ mad "Although, it appears that the slow walker folded too easily."
+    u @ speak "Ok well enough of this bullshittle, you're under arrest."
+    scene bg office4
+    "The bad guy has been captured."
+    "And VR is saved!"
+    "And you got so much praise!"
+    show u basic
+    u @ speak "And money?"
+    "So, SO much praise!"
+    u @ mad "MONEY?"
+    scene black with fade
+
 
 
 label final:
@@ -631,7 +729,7 @@ label final:
     scene black
 
     "Your instincts havce guided you to..."
-    "\"Human by chance, Alpha by choice\"? Imteresting..."
+    "Timothy and \"Human by chance, Alpha by choice\"? Imteresting..."
     "But are you correct?"
     "Only one way to find out..."
     
