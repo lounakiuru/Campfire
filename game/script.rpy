@@ -10,6 +10,7 @@ define cbbg = Character("Child Timothy", image = "cbbg")
 label end:
     scene bg bedroom
     show u wink
+    play music win
 
     "You find another job,"
     "And die happily of old age"
@@ -552,6 +553,8 @@ label office2:
 
     scene bg office
 
+    play music chase
+
     "You walk back into the office"
     "Time to find out who's behind this!"
     menu:
@@ -659,6 +662,7 @@ label yell:
 
     scene bg train
     show cbbg basic
+    play music flashback
 
     bbg "You see, I was on my way to Kouvola"
     bbg "They were holding a limited time sale of rare fidget spinners"
@@ -678,6 +682,7 @@ label yell:
     scene bg coffeeroom
     show bbg basic
     show u mad
+    play music mysterious
 
     u "Wait, seriously"
     u "A fidget spinner?"
@@ -696,6 +701,7 @@ label yell:
     bbg @ mad "Although, it appears that the slow walker folded too easily."
     u @ speak "Ok well enough of this bullshittle, you're under arrest."
     scene bg office4
+    play music win
     "The bad guy has been captured."
     "And VR is saved!"
     "And you got so much praise!"
